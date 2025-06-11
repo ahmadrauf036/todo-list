@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body{
+    max-width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body #container{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+body #container #uncompleted-tasks{
+    margin-top: 25px;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+}
+body #container #add-todo{
+    margin-left: 25px;
+    margin-top: 5px;
+}
+body #container #add-opt{
+    margin-left: 40px;
+    margin-top: 5px;
+    display: flex;
+    color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+}
+body #container #add-opt i{
+    margin-right: 5px;
+    font-size: small;
+}
+body #container #uncompleted-tasks #taskdiv input{
+    accent-color: rgb(74, 179, 147);
+    color: white;
+    margin-right: 5px;
+}
+#add-todo{
+    display: none;
+}
+#add-todo #newtaskform #newTask{
+    border: 1px solid rgb(74, 179, 147);
+    padding: 5px;
+    border-radius: 10px;
+}
+#add-todo #newtaskform button{
+    background-color: rgb(74, 179, 147);
+    padding: 5px;
+    border: 0;
+    border-radius: 50%;
+}
+#add-box:checked ~ #add-todo{
+    display: flex;
+}
+#add-box:checked ~ #add-opt{
+    display: none;
+}
+#completed-tasks #comp_taskdiv label{
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.5);
+}
+body #container #completed-tasks{
+    margin-top: 25px;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+}
+#completed-tasks #comp_taskdiv input{
+    accent-color: rgb(74, 179, 147);
+    margin-right: 5px;
+}
+
