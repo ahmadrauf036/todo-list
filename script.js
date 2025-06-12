@@ -12,6 +12,7 @@ document.getElementById("newtaskform").addEventListener("submit",function(event)
         sect.insertAdjacentHTML("beforeend",element)
         checkbox=document.getElementById(`task${task_count}`)
         document.getElementById("add-box").checked=false
+        untask_count=0
         checkbox.addEventListener("change",function(){
             if(this.checked){
                 this.parentElement.remove()
@@ -20,13 +21,13 @@ document.getElementById("newtaskform").addEventListener("submit",function(event)
                     uncompleted_tasks.splice(index, 1);
                 }
                 task = this.value
-
                 completed_tasks.push(task)
-                ele = `<div id="comp_taskdiv"><input type="checkbox" name="task" class="task-box" id="untask${task_count}" value="${task}" checked><label for="untask${task_count}">${task}</label></div>`
+                ele = `<div id="comp_taskdiv"><input type="checkbox" name="task" class="task-box" id="untask${untask_count}" value="${task}" checked><label for="untask${untask_count}">${task}</label></div>`
                 document.getElementById("completed-tasks").insertAdjacentHTML("beforeend",ele)
-                document.getElementById(`untask${task_count}`).addEventListener("change",function(){
+                document.getElementById(`untask${untask_count}`).addEventListener("change",function(){
                     this.checked=true
                 })
+                untask_count++
             }
         })
         task_count++
